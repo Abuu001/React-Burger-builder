@@ -1,10 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import  Person from "./Person"
+import School from "./School"
 
-function App() {
+
+function App(props) {
   return (
     <div className="App">
-     <h2>hello </h2>
+      <Person  name= "Bessy"  />
+      <Person name= "Laura"   />
+      <Person  name= "Sarah"  />
+     <School />
     </div>
   );
 }
