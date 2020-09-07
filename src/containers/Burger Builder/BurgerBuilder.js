@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Aux from "../../hoc/Auxi"
+import Burger from "../../components/Burger/Burger"
 
  class BurgerBuilder extends Component {
     constructor(props) {
@@ -12,11 +13,11 @@ import Aux from "../../hoc/Auxi"
     render() {
         return (
             <Aux>
-             <div>Burger</div>
-             <div>Build controls</div>
+                <Burger />
+                <div>Build controls</div>
             </Aux>
         )
     }
 }
 
-export default BurgerBuilder
+export default BurgerBuilder;
