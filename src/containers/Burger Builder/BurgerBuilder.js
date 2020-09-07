@@ -6,14 +6,18 @@ import Burger from "../../components/Burger/Burger"
     constructor(props) {
         super(props)
         this.state = {
-            
+            ingredients : {
+                salad: 1,
+                cheese : 2 ,
+                bacon : 1,
+                meat : 2 
+            }
         }
     }
-     
     render() {
         return (
             <Aux>
-                <Burger />
+                <Burger  ingredients={this.state.ingredients}/>
                 <div>Build controls</div>
             </Aux>
         )
