@@ -3,20 +3,27 @@ import "./Burger.css"
 import BurgerIngredient from "./BurgerIngredients/BurgerIngredient"
 
 function Burger(props) {
-    const transformedIngredients =Object.keys(props.ingredients)
-    .map(igKey=>{
-        return[...Array(props.ingredients[igKey])].map((_,index) =>{
-            return (<BurgerIngredient  key={igKey + index} type={igKey}/>)   
+    let  transformedIngredients =Object.keys(props.ingredients)
+        .map(igKey=>{
+            return[...Array(props.ingredients[igKey])]
+        .map((_,index) =>{
+                return (<BurgerIngredient  key={igKey + index} type={igKey}/>)   
+            })
         })
-})
-    console.log(transformedIngredients);
-return (
-    <div className="Burger">
-            <BurgerIngredient  type="bread-top"/>
-                {transformedIngredients}
-            <BurgerIngredient  type="bread-bottom"/>
-    </div>
-    )
+        .reduce((arr,el)=>{
+            return arr.concat(el)
+        },[])
+        if(transformedIngredients.length ===0){
+            transformedIngredients= <p>Please add some Ingredients !!</p>
+        }
+        console.log(transformedIngredients);
+    return (
+        <div className="Burger">
+                <BurgerIngredient  type="bread-top"/>
+                    {transformedIngredients}
+                <BurgerIngredient  type="bread-bottom"/>
+        </div>
+        )
 }
 
 export default Burger;
