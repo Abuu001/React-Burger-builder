@@ -5,7 +5,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 
  class BurgerBuilder extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             ingredients : {
                 salad: 0,
