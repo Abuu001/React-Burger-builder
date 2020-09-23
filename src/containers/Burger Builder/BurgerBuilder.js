@@ -26,7 +26,7 @@ const INGREDIENT_PRICE={
     }
 
     addIngredientHandler=(type)=>{
-        const oldCount = this.state.ingredients
+        const oldCount = this.state.ingredients[type]
         const updatedCount= oldCount + 1
         const updatedIngredients ={
             ...this.state.ingredients
@@ -36,6 +36,10 @@ const INGREDIENT_PRICE={
         const priceAddition= INGREDIENT_PRICE[type]
         const oldPrice = this.state.totalPrice
         const newPrice = oldPrice + priceAddition
+        this.setState({
+            totalPrice : newPrice,
+            ingredients : updatedIngredients
+        })
     }
     removeIngredientHandler=(type)=>{
 
@@ -44,7 +48,7 @@ const INGREDIENT_PRICE={
         return (
             <Aux>
                 <Burger  ingredients={this.state.ingredients}/>
-                <BuildControls />
+                <BuildControls  ingredientAdded={this.addIngredientHandler}/>
             </Aux>
         )
     }
