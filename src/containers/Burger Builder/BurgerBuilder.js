@@ -107,6 +107,7 @@ const INGREDIENT_PRICE={
                     ordered ={this.props.purchaseable}
                     purchaseCancelled={this.purchaseCancelHandler}
                     purchaseContinued={this.purchaseContinueHandler}
+                    price ={this.state.totalPrice}
                    />
                 </Modal>
                 <BuildControls

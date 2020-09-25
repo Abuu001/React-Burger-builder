@@ -1,10 +1,10 @@
 import React from "react"
-import "./Button"
+import "./Button.css"
 
 const Button =(props)=>(
         <div>
             <button
-            className="Button"
+            className="Button "
             onClick={props.clicked}
             >{props.children}</button>
         </div>
